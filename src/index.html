@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Agawa — Dąbrowa Górnicza | Kawa, piwo, imprezy</title>
+  <meta name="description" content="Bar sąsiedzki na Morcinka. Ogródek pod drzewami, imprezy okolicznościowe, poranna kawa i wieczorne piwo. Wpadaj jak do siebie.">
+  <link rel="canonical" href="https://bar-agawa.pl/">
+  <meta property="og:title" content="Bar Agawa — Wpadaj jak do siebie">
+  <meta property="og:description" content="Bar sąsiedzki na Morcinka. Ogródek, piwo, kawa, imprezy.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="pl_PL">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":["Restaurant","BarOrPub"],"name":"Bar Agawa","telephone":"+48506721654","priceRange":"1-20 PLN","servesCuisine":["Bar","Kawiarnia"],"address":{"@type":"PostalAddress","streetAddress":"Gustawa Morcinka 1","addressLocality":"Dąbrowa Górnicza","postalCode":"41-303","addressCountry":"PL"},"geo":{"@type":"GeoCoordinates","latitude":50.3219,"longitude":19.1941},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","reviewCount":"12"}}
+  </script>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       BAR AGAWA — Opus Magnum v2
+       macro: Manifesto · genre: editorial-warm · theme: Agawa Organic
+       VARIANCE 6 / MOTION 4 / DENSITY 4
+    ═══════════════════════════════════════════════════════════════ */
+
+    :root {
+      --agawa: #4A7C59;
+      --agawa-deep: #2d5438;
+      --cream: #F5E6D3;
+      --terra: #C75B39;
+      --terra-glow: #e06b42;
+      --bark: #3D2B1F;
+      --bark-50: rgba(61, 43, 31, 0.5);
+      --milk: #FFFBF5;
+      --milk-warm: #FFF8F0;
+      --leaf-shadow: rgba(74, 124, 89, 0.12);
+
+      --font-display: 'Bitter', Georgia, serif;
+      --font-body: 'Lato', -apple-system, sans-serif;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--bark);
+      background: var(--milk);
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══ GRAIN TEXTURE (subtle paper feel) ═══ */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    /* ═══ NAV — floating minimal ═══ */
+    .nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      background: rgba(255, 251, 245, 0.85);
+      backdrop-filter: blur(12px) saturate(1.4);
+      border: 1px solid rgba(74, 124, 89, 0.12);
+      border-radius: 999px;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      box-shadow: 0 4px 24px rgba(61, 43, 31, 0.08);
+      transition: box-shadow 0.3s var(--ease-out);
+    }
+    .nav:hover { box-shadow: 0 8px 32px rgba(61, 43, 31, 0.12); }
+
+    .nav__brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.75rem;
+      color: var(--bark);
+    }
+
+    .nav__links {
+      display: none;
+      list-style: none;
+      gap: 0;
+    }
+    .nav__links a {
+      display: block;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--bark-50);
+      border-radius: 999px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav__links a:hover {
+      color: var(--bark);
+      background: var(--leaf-shadow);
+    }
+
+    .nav__cta {
+      background: var(--agawa);
+      color: white;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: transform 0.2s var(--ease-spring), background 0.2s;
+    }
+    .nav__cta:hover { background: var(--agawa-deep); transform: scale(1.05); }
+    .nav__cta:active { transform: scale(0.95); }
+
+    @media (min-width: 768px) {
+      .nav__links { display: flex; }
+      .nav { gap: 0.5rem; }
+    }
+
+    /* ═══ HERO — Manifesto style, full viewport ═══ */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Atmospheric background */
+    .hero__atmosphere {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(74, 124, 89, 0.15), transparent),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(199, 91, 57, 0.06), transparent),
+        radial-gradient(ellipse 120% 100% at 50% 110%, var(--cream), transparent 70%);
+    }
+
+    /* Decorative agave leaf silhouettes */
+    .hero__leaf {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.06;
+      font-size: clamp(8rem, 20vw, 16rem);
+      transform: rotate(-15deg);
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero__leaf--1 { top: 10%; right: -5%; transform: rotate(25deg); }
+    .hero__leaf--2 { bottom: 10%; left: -3%; transform: rotate(-20deg); }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--agawa);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.2s forwards;
+    }
+    .hero__badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s ease infinite;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.4s forwards;
+    }
+    .hero__title em {
+      font-style: normal;
+      color: var(--agawa);
+      position: relative;
+    }
+    .hero__title em::after {
+      content: '';
+      position: absolute;
+      bottom: 0.05em;
+      left: 0;
+      right: 0;
+      height: 0.12em;
+      background: var(--terra);
+      opacity: 0.4;
+      border-radius: 2px;
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.7;
+      color: var(--bark-50);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.6s forwards;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.8s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: var(--font-body);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s var(--ease-spring), box-shadow 0.3s;
+      text-decoration: none;
+    }
+    .btn:active { transform: scale(0.95); }
+
+    .btn--fill {
+      background: var(--bark);
+      color: var(--milk);
+      box-shadow: 0 4px 16px rgba(61, 43, 31, 0.2);
+    }
+    .btn--fill:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(61, 43, 31, 0.25); }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--bark);
+      border: 1.5px solid rgba(61, 43, 31, 0.2);
+    }
+    .btn--ghost:hover { border-color: var(--agawa); color: var(--agawa); transform: translateY(-2px); }
+
+    .hero__proof {
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--bark-50);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 1s forwards;
+    }
+    .hero__stars { color: #f59e0b; font-size: 1rem; letter-spacing: 1px; }
+
+    /* ═══ SECTION: MENU — Asymmetric stagger ═══ */
+    .menu-section {
+      padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+      background: var(--cream);
+      position: relative;
+    }
+    .menu-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, var(--milk), transparent);
+      pointer-events: none;
+    }
+
+    .menu__header {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+    .menu__eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--agawa);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .menu__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 700;
+    }
+
+    .menu__grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .menu__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .menu__grid > :nth-child(2) { margin-top: 3rem; }
+      .menu__grid > :nth-child(4) { margin-top: 3rem; }
+    }
+
+    .menu-card {
+      background: var(--milk);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(61, 43, 31, 0.05);
+      border: 1px solid rgba(74, 124, 89, 0.08);
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+      will-change: transform;
+    }
+    .menu-card:hover {
+      transform: translateY(-4px) rotate(-0.5deg);
+      box-shadow: 0 12px 40px rgba(61, 43, 31, 0.1);
+    }
+
+    .menu-card__icon { font-size: 2rem; margin-bottom: 1rem; }
+    .menu-card__name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--cream);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.6rem 0;
+      position: relative;
+    }
+    .menu-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      height: 1px;
+      background: repeating-linear-gradient(to right, var(--bark) 0, var(--bark) 2px, transparent 2px, transparent 6px);
+      opacity: 0.1;
+    }
+    .menu-item:last-child::after { display: none; }
+    .menu-item__name { font-size: 0.9rem; }
+    .menu-item__price {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--agawa);
+      font-size: 0.9rem;
+    }
+
+    /* ═══ SECTION: O NAS — Letter/Story style ═══ */
+    .about-section {
+      padding: clamp(5rem, 12vw, 10rem) 1.5rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .about__letter {
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      line-height: 1.9;
+      color: var(--bark);
+    }
+    .about__letter p { margin-bottom: 1.5rem; }
+    .about__letter p:first-child::first-letter {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      float: left;
+      line-height: 0.8;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+      color: var(--agawa);
+      font-weight: 700;
+    }
+
+    .about__features {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    .about__feat {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+      background: var(--cream);
+      transition: transform 0.3s var(--ease-spring);
+    }
+    .about__feat:hover { transform: scale(1.05) rotate(1deg); }
+    .about__feat-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .about__feat-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .about__feat-sub {
+      font-size: 0.7rem;
+      color: var(--bark-50);
+      margin-top: 0.2rem;
+    }
+
+    /* ═══ SECTION: GALERIA — Parallax offset cards ═══ */
+    .gallery-section {
+      padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+      background: var(--milk-warm);
+    }
+    .gallery__header {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+    .gallery__eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--terra);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .gallery__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
+    .gallery__grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .gallery__grid {
+        grid-template-columns: 1.2fr 0.8fr 1fr;
+        grid-template-rows: 220px 220px;
+        gap: 1rem;
+      }
+      .gallery__item:nth-child(1) { grid-row: 1 / 3; }
+      .gallery__item:nth-child(3) { grid-column: 3; grid-row: 1 / 3; }
+    }
+
+    .gallery__item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4/3;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.5s var(--ease-out), box-shadow 0.5s;
+    }
+    @media (min-width: 768px) {
+      .gallery__item { aspect-ratio: unset; }
+    }
+    .gallery__item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 16px 48px rgba(61, 43, 31, 0.15);
+    }
+    .gallery__item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(61, 43, 31, 0.3), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery__item:hover::after { opacity: 1; }
+
+    .gallery__label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s var(--ease-out);
+    }
+    .gallery__item:hover .gallery__label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery__placeholder {
+      font-size: 2.5rem;
+      opacity: 0.3;
+    }
+
+    /* ═══ SECTION: IMPREZY — Full-bleed CTA ═══ */
+    .events-section {
+      padding: clamp(5rem, 12vw, 8rem) 1.5rem;
+      background: var(--agawa-deep);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .events-section::before {
+      content: '🌿';
+      position: absolute;
+      top: -2rem;
+      right: -2rem;
+      font-size: 12rem;
+      opacity: 0.05;
+      transform: rotate(30deg);
+      pointer-events: none;
+    }
+
+    .events__inner {
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+    }
+    .events__eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    .events__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .events__text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .btn--terra {
+      background: var(--terra);
+      color: white;
+      box-shadow: 0 4px 16px rgba(199, 91, 57, 0.3);
+    }
+    .btn--terra:hover {
+      background: var(--terra-glow);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 32px rgba(199, 91, 57, 0.4);
+    }
+
+    /* ═══ SECTION: OPINIE — Quote-led ═══ */
+    .reviews-section {
+      padding: clamp(5rem, 12vw, 8rem) 1.5rem;
+    }
+    .reviews__inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .reviews__header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .reviews__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    .reviews__score {
+      font-size: 0.8rem;
+      color: var(--bark-50);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .reviews__score span { color: #f59e0b; }
+
+    .review {
+      padding: 2rem 0;
+      border-top: 1px solid rgba(61, 43, 31, 0.08);
+      position: relative;
+    }
+    .review::before {
+      content: '"';
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--agawa);
+      opacity: 0.2;
+      position: absolute;
+      top: 1rem;
+      left: -0.5rem;
+      line-height: 1;
+    }
+    .review__text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      padding-left: 1.5rem;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .review__author {
+      padding-left: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--bark-50);
+      font-weight: 700;
+    }
+    .reviews__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--agawa);
+      transition: gap 0.2s var(--ease-out);
+    }
+    .reviews__link:hover { gap: 0.75rem; }
+
+    /* ═══ SECTION: KONTAKT — Split asymmetric ═══ */
+    .contact-section {
+      padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+      background: var(--cream);
+    }
+    .contact__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    @media (min-width: 768px) {
+      .contact__inner { grid-template-columns: 1fr 1.2fr; gap: 4rem; }
+    }
+
+    .contact__info { display: flex; flex-direction: column; gap: 2rem; }
+    .contact__eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--agawa);
+      font-weight: 700;
+    }
+    .contact__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-top: 0.5rem;
+    }
+
+    .contact__item { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--milk);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(61, 43, 31, 0.06);
+    }
+    .contact__label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--bark-50); margin-bottom: 0.2rem; }
+    .contact__value { font-size: 0.95rem; font-weight: 700; }
+    .contact__phone {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--bark);
+    }
+
+    .contact__hours { margin-top: 1rem; }
+    .contact__hours table { width: 100%; font-size: 0.85rem; border-collapse: collapse; }
+    .contact__hours td { padding: 0.5rem 0; border-bottom: 1px solid rgba(61, 43, 31, 0.06); }
+    .contact__hours td:last-child { text-align: right; font-weight: 700; }
+
+    .contact__map {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: 0 8px 32px rgba(61, 43, 31, 0.1);
+    }
+    .contact__map iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ═══ FOOTER ═══ */
+    .footer {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--bark-50);
+      border-top: 1px solid rgba(61, 43, 31, 0.06);
+    }
+    .footer a { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ═══ ANIMATIONS ═══ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+
+    /* Scroll-triggered reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ═══ COOKIE ═══ */
+    .cookie {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      max-width: 400px;
+      background: var(--bark);
+      color: var(--cream);
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transform: translateY(120%);
+      transition: transform 0.4s var(--ease-out);
+    }
+    .cookie.is-visible { transform: translateY(0); }
+    .cookie__btn {
+      background: var(--agawa);
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .cookie__btn:hover { background: var(--agawa-deep); }
+
+    /* ═══ REDUCED MOTION ═══ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="sr-only" style="position:absolute;top:-100%;left:0;z-index:9999;padding:0.5rem 1rem;background:var(--agawa);color:white;font-size:0.8rem;">Przejdź do treści</a>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" aria-label="Nawigacja">
+    <a href="#" class="nav__brand">Agawa</a>
+    <ul class="nav__links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#o-nas">O nas</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="tel:+48506721654" class="nav__cta">Zadzwoń</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="hero__atmosphere" aria-hidden="true"></div>
+      <span class="hero__leaf hero__leaf--1" aria-hidden="true">🌿</span>
+      <span class="hero__leaf hero__leaf--2" aria-hidden="true">🌿</span>
+      <div class="hero__content">
+        <div class="hero__badge" id="status">
+          <span id="statusText">Otwarte do 22:00</span>
+        </div>
+        <h1 class="hero__title">Wpadaj jak<br>do <em>siebie</em>.</h1>
+        <p class="hero__sub">Bar sąsiedzki na Morcinka. Kawa rano, piwo wieczorem, imprezy kiedy chcesz. Bez udawania.</p>
+        <div class="hero__actions">
+          <a href="tel:+48506721654" class="btn btn--fill">📞 Zadzwoń</a>
+          <a href="https://maps.google.com/?q=Gustawa+Morcinka+1+41-303+Dąbrowa+Górnicza" target="_blank" rel="noopener" class="btn btn--ghost">📍 Jak dojechać</a>
+        </div>
+        <div class="hero__proof">
+          <span class="hero__stars">★★★★★</span>
+          <span>5.0 na Google — 12 opinii</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MENU ═══ -->
+    <section class="menu-section" id="menu">
+      <div class="menu__header reveal">
+        <div class="menu__eyebrow">Co podajemy</div>
+        <h2 class="menu__title">Od kawy po piwo.</h2>
+      </div>
+      <div class="menu__grid">
+        <div class="menu-card reveal reveal-delay-1">
+          <div class="menu-card__icon">☕</div>
+          <h3 class="menu-card__name">Kawa i herbata</h3>
+          <div class="menu-item"><span class="menu-item__name">Espresso</span><span class="menu-item__price">6 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Americano</span><span class="menu-item__price">7 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Cappuccino</span><span class="menu-item__price">9 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Latte</span><span class="menu-item__price">10 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Herbata</span><span class="menu-item__price">5 zł</span></div>
+        </div>
+        <div class="menu-card reveal reveal-delay-2">
+          <div class="menu-card__icon">🍺</div>
+          <h3 class="menu-card__name">Piwo</h3>
+          <div class="menu-item"><span class="menu-item__name">Lane 0,5l</span><span class="menu-item__price">8 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Lane 0,3l</span><span class="menu-item__price">6 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Butelkowe</span><span class="menu-item__price">od 7 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Bezalkoholowe</span><span class="menu-item__price">7 zł</span></div>
+        </div>
+        <div class="menu-card reveal reveal-delay-1">
+          <div class="menu-card__icon">🥤</div>
+          <h3 class="menu-card__name">Napoje</h3>
+          <div class="menu-item"><span class="menu-item__name">Sok</span><span class="menu-item__price">5 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Woda</span><span class="menu-item__price">4 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Cola / Fanta</span><span class="menu-item__price">5 zł</span></div>
+        </div>
+        <div class="menu-card reveal reveal-delay-2">
+          <div class="menu-card__icon">🥪</div>
+          <h3 class="menu-card__name">Przekąski</h3>
+          <div class="menu-item"><span class="menu-item__name">Tost</span><span class="menu-item__price">8 zł</span></div>
+          <div class="menu-item"><span class="menu-item__name">Kanapka</span><span class="menu-item__price">10 zł</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ O NAS ═══ -->
+    <section class="about-section" id="o-nas">
+      <div class="about__letter reveal">
+        <p>Agawa stoi na Morcinka od lat. Rano wpadają stali po kawę. Wieczorem sąsiedzi siadają przy piwie. W weekendy czasem ktoś obchodzi urodziny.</p>
+        <p>Mamy ogródek pod drzewami. Latem lepszego miejsca na osiedlu nie znajdziesz. W środku klimat: telewizor, muzyka w tle, luźna rozmowa przy barze.</p>
+        <p>Nie jesteśmy sieciówką. Nie robimy degustacji. Mamy dobrą kawę, zimne piwo i spokój. I to wystarczy.</p>
+      </div>
+      <div class="about__features reveal">
+        <div class="about__feat">
+          <div class="about__feat-icon">🌿</div>
+          <div class="about__feat-label">Ogródek</div>
+          <div class="about__feat-sub">pod lipami</div>
+        </div>
+        <div class="about__feat">
+          <div class="about__feat-icon">🎉</div>
+          <div class="about__feat-label">Imprezy</div>
+          <div class="about__feat-sub">10-30 osób</div>
+        </div>
+        <div class="about__feat">
+          <div class="about__feat-icon">📺</div>
+          <div class="about__feat-label">Mecze</div>
+          <div class="about__feat-sub">na żywo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ GALERIA ═══ -->
+    <section class="gallery-section" id="galeria">
+      <div class="gallery__header reveal">
+        <div class="gallery__eyebrow">Zdjęcia</div>
+        <h2 class="gallery__title">Jak u nas wygląda</h2>
+      </div>
+      <div class="gallery__grid">
+        <div class="gallery__item reveal"><span class="gallery__placeholder">🌿</span><span class="gallery__label">Ogródek latem</span></div>
+        <div class="gallery__item reveal reveal-delay-1"><span class="gallery__placeholder">🍺</span><span class="gallery__label">Bar</span></div>
+        <div class="gallery__item reveal reveal-delay-2"><span class="gallery__placeholder">🎉</span><span class="gallery__label">Imprezy</span></div>
+        <div class="gallery__item reveal reveal-delay-3"><span class="gallery__placeholder">☕</span><span class="gallery__label">Poranna kawa</span></div>
+      </div>
+    </section>
+
+    <!-- ═══ IMPREZY ═══ -->
+    <section class="events-section" id="imprezy">
+      <div class="events__inner reveal">
+        <div class="events__eyebrow">Imprezy okolicznościowe</div>
+        <h2 class="events__title">Zorganizuj u nas urodziny, rocznicę albo spotkanie po pracy.</h2>
+        <p class="events__text">Ogródek albo wnętrze. Swoje jedzenie? Nie ma problemu. Muzyka, dekoracje — dogadamy. Wpadaj na 10 do 30 osób.</p>
+        <a href="tel:+48506721654" class="btn btn--terra">📞 Zadzwoń i zarezerwuj termin</a>
+      </div>
+    </section>
+
+    <!-- ═══ OPINIE ═══ -->
+    <section class="reviews-section" id="opinie">
+      <div class="reviews__inner">
+        <div class="reviews__header reveal">
+          <h2 class="reviews__title">Co mówią goście</h2>
+          <div class="reviews__score"><span>★★★★★</span> 5.0 / 5</div>
+        </div>
+        <div class="review reveal">
+          <p class="review__text">Kawiarnia Agawa to lokal z tradycjami w którym można wypić wyborną poranną kawusę oraz napić się piwka. Organizowane są tutaj również imprezy.</p>
+          <div class="review__author">Jakub K. · Google</div>
+        </div>
+        <div class="review reveal">
+          <p class="review__text">Świetne miejsce z ogródkiem na zewnątrz pod drzewami, w środku klimatycznie, TV, możliwość zrobienia imprezy na mniejszą ilość osób, smaczne jedzenie.</p>
+          <div class="review__author">Ala S. · Google</div>
+        </div>
+        <a href="https://www.google.com/maps/place/Bar+Agawa" target="_blank" rel="noopener" class="reviews__link reveal">Zobacz wszystkie opinie →</a>
+      </div>
+    </section>
+
+    <!-- ═══ KONTAKT ═══ -->
+    <section class="contact-section" id="kontakt">
+      <div class="contact__inner">
+        <div class="contact__info reveal">
+          <div>
+            <div class="contact__eyebrow">Kontakt</div>
+            <h2 class="contact__title">Gdzie nas znajdziesz</h2>
+          </div>
+          <div class="contact__item">
+            <div class="contact__icon">📍</div>
+            <div>
+              <div class="contact__label">Adres</div>
+              <div class="contact__value">Gustawa Morcinka 1<br>41-303 Dąbrowa Górnicza</div>
+            </div>
+          </div>
+          <div class="contact__item">
+            <div class="contact__icon">📞</div>
+            <div>
+              <div class="contact__label">Telefon</div>
+              <a href="tel:+48506721654" class="contact__phone">506 721 654</a>
+            </div>
+          </div>
+          <div class="contact__hours">
+            <table>
+              <tr><td>Poniedziałek - Piątek</td><td>8:00 - 22:00</td></tr>
+              <tr><td>Sobota</td><td>10:00 - 23:00</td></tr>
+              <tr><td>Niedziela</td><td>10:00 - 20:00</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="contact__map reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.5!2d19.194!3d50.322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE5JzE5LjAiTiAxOcKwMTEnMzguOCJF!5e0!3m2!1spl!2spl!4v1" loading="lazy" title="Mapa — Bar Agawa"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Bar Agawa · Morcinka 1, Dąbrowa Górnicza · <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </footer>
+
+  <div class="cookie" id="cookie" role="alert">
+    <span>Strona używa Google Maps (cookies).</span>
+    <button class="cookie__btn" id="cookieOk">OK</button>
+  </div>
+
+  <script>
+    // Status
+    !function(){const h=new Date().getHours(),d=new Date().getDay(),el=document.getElementById('statusText');
+    let o=8,c=22;if(d===0){o=10;c=20}else if(d===6){o=10;c=23}
+    el.textContent=h>=o&&h<c?'Otwarte do '+c+':00':'Zamknięte';
+    if(h<o||h>=c)el.parentElement.style.setProperty('--dot','#ef4444')}();
+
+    // Cookie
+    !function(){if(localStorage.getItem('a-ck'))return;const b=document.getElementById('cookie');
+    setTimeout(()=>b.classList.add('is-visible'),1500);
+    document.getElementById('cookieOk').onclick=()=>{localStorage.setItem('a-ck','1');b.classList.remove('is-visible')}}();
+
+    // Scroll reveal (IntersectionObserver)
+    const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
