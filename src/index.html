@@ -245,6 +245,7 @@ section{padding:7rem 1.5rem;position:relative}
 
 .menu-card .card-icon{font-size:2.2rem;margin-bottom:.8rem;display:block;
   filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1))}
+.menu-card{text-align:center}
 .menu-card h3{font-family:var(--font-display);font-size:1.15rem;color:var(--agave-deep);
   margin-bottom:.5rem;font-weight:700}
 .menu-card .price{font-size:1.6rem;font-weight:700;color:var(--spine);margin-bottom:.8rem;
@@ -443,11 +444,12 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
 .icon svg{display:block}
 .icon--glow svg{filter:url(#agawa-glow)}
 .card-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;
-  border-radius:var(--radius-md);margin-bottom:1rem;
+  border-radius:var(--radius-md);margin-bottom:1rem;margin-inline:auto;
   background:linear-gradient(135deg,rgba(61,139,110,0.06),rgba(141,186,165,0.1));
   border:1px solid rgba(61,139,110,0.1)}
 .card-icon svg{filter:url(#agawa-glow)}
-.pill .icon{margin-right:.3rem}
+.pill{display:inline-flex;align-items:center;gap:.4rem}
+.pill .icon{margin:0;line-height:0}
 .nav-brand{display:flex;align-items:center;gap:.3rem;text-decoration:none}
 .nav-brand svg{transition:transform .3s var(--ease-spring)}
 .nav-brand:hover svg{transform:rotate(-8deg) scale(1.1)}
