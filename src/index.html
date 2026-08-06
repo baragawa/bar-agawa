@@ -204,8 +204,7 @@ nav .nav-cta:active{transform:scale(0.96)}
 /* Hero rating */
 .hero-rating{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;justify-content:center;
   position:relative;z-index:1}
-.hero-rating .stars{color:var(--spine);font-size:1.1rem;letter-spacing:2px;
-  text-shadow:0 0 12px var(--spine-glow);filter:drop-shadow(0 2px 4px rgba(196,120,58,0.2))}
+.hero-rating .stars{display:inline-flex;gap:2px;filter:drop-shadow(0 2px 8px rgba(196,120,58,0.3))}
 .hero-rating .rating-text{color:var(--earth-50);font-weight:400;font-size:.85rem}
 .hero-rating .rating-number{font-weight:700;color:var(--agave-deep);font-size:1rem}
 
@@ -353,8 +352,7 @@ section{padding:7rem 1.5rem;position:relative}
   display:flex;align-items:center;gap:.5rem}
 .review-author::before{content:'';width:18px;height:2px;
   background:linear-gradient(90deg,var(--agave),var(--agave-silver));display:inline-block;border-radius:1px}
-.review-stars{color:var(--spine);font-size:.75rem;margin-top:.3rem;letter-spacing:2px;
-  text-shadow:0 0 8px rgba(196,120,58,0.15)}
+.review-stars{display:flex;gap:1px;margin-top:.4rem;filter:drop-shadow(0 0 6px rgba(196,120,58,0.2))}
 
 /* ═══════ CONTACT ═══════ */
 #contact{padding:7rem 1.5rem;background:var(--milk-warm);position:relative}
@@ -440,6 +438,22 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
   #hero h1 .gradient-word{animation:none}
 }
 
+/* ═══════ CUSTOM SVG ICONS ═══════ */
+.icon{display:inline-block;vertical-align:middle;flex-shrink:0}
+.icon svg{display:block}
+.icon--glow svg{filter:url(#agawa-glow)}
+.card-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;
+  border-radius:var(--radius-md);margin-bottom:1rem;
+  background:linear-gradient(135deg,rgba(61,139,110,0.06),rgba(141,186,165,0.1));
+  border:1px solid rgba(61,139,110,0.1)}
+.card-icon svg{filter:url(#agawa-glow)}
+.pill .icon{margin-right:.3rem}
+.nav-brand{display:flex;align-items:center;gap:.3rem;text-decoration:none}
+.nav-brand svg{transition:transform .3s var(--ease-spring)}
+.nav-brand:hover svg{transform:rotate(-8deg) scale(1.1)}
+.footer-mark{margin:0 auto 1rem;display:flex;justify-content:center;opacity:.5}
+.footer-mark svg{filter:url(#agawa-glow)}
+
 /* ═══════ SMOOTH COUNTER ═══════ */
 .counter{font-variant-numeric:tabular-nums}
 </style>
@@ -447,17 +461,129 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
 <body>
 <a href="#hero" class="skip-link">Przejdź do treści</a>
 
+<!-- SVG Icon Definitions (agave botanical style, stroke 2px, round caps) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <!-- Glow filter for brand icons -->
+    <filter id="agawa-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <!-- BRAND MARK: Stylized agave rosette -->
+    <symbol id="ico-agawa" viewBox="0 0 48 48">
+      <path d="M24 42 C20 34 14 28 12 20 C13 14 17 9 24 5 C31 9 35 14 36 20 C34 28 28 34 24 42z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M24 42 C18 36 10 32 7 24 C8 18 13 12 19 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <path d="M24 42 C30 36 38 32 41 24 C40 18 35 12 29 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <circle cx="24" cy="22" r="2" fill="currentColor" opacity="0.4"/>
+    </symbol>
+
+    <!-- COFFEE: Cup with steam swirl -->
+    <symbol id="ico-kawa" viewBox="0 0 40 40">
+      <path d="M8 18 h18 v12 c0 4-4 6-9 6 s-9-2-9-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M26 20 c3 0 5 2 5 4 s-2 4-5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M13 12 c0-3 2-4 2-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      <path d="M17 14 c0-3 2-5 1-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <path d="M21 12 c0-3 2-4 2-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+    </symbol>
+
+    <!-- BEER: Pint glass with foam -->
+    <symbol id="ico-piwo" viewBox="0 0 40 40">
+      <path d="M12 10 L14 34 h12 L28 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M12 10 c0-2 3-4 8-4 s8 2 8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <ellipse cx="16" cy="8" rx="2" ry="1.5" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+      <ellipse cx="22" cy="7" rx="2.5" ry="1.8" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+      <path d="M15 18 h10" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+      <path d="M14 24 h12" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+    </symbol>
+
+    <!-- DRINKS: Glass with lemon slice -->
+    <symbol id="ico-napoj" viewBox="0 0 40 40">
+      <path d="M13 8 L15 34 h10 L27 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M11 8 h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="28" cy="14" r="5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M28 10 v8 M24.5 14 h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <path d="M17 20 c2 0 3 2 5 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- SNACKS: Cutting board with sandwich -->
+    <symbol id="ico-przekaski" viewBox="0 0 40 40">
+      <rect x="6" y="24" width="28" height="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 24 v-10 h16 v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M12 14 h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      <path d="M12 17 c2 1 4 0 6 1 s4 0 6 1 s3-1 4-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <path d="M12 20 h16" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- TREE: Garden/ogródek -->
+    <symbol id="ico-drzewo" viewBox="0 0 40 40">
+      <path d="M20 36 v-14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="20" cy="16" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="15" cy="14" r="4" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+      <circle cx="24" cy="13" r="3" stroke="currentColor" stroke-width="1" fill="none" opacity="0.3"/>
+      <circle cx="20" cy="19" r="3.5" stroke="currentColor" stroke-width="1" fill="none" opacity="0.35"/>
+    </symbol>
+
+    <!-- PARTY: Confetti burst -->
+    <symbol id="ico-impreza" viewBox="0 0 40 40">
+      <path d="M14 36 L20 12 L26 36z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <ellipse cx="20" cy="12" rx="4" ry="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M12 8 l-2-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M28 8 l2-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M20 6 v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <circle cx="10" cy="5" r="1" fill="currentColor" opacity="0.4"/>
+      <circle cx="30" cy="5" r="1" fill="currentColor" opacity="0.4"/>
+      <circle cx="20" cy="3" r="1" fill="currentColor" opacity="0.3"/>
+    </symbol>
+
+    <!-- COIN: Ceny -->
+    <symbol id="ico-cena" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M20 12 v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M16 16 c0-2 2-3 4-3 s4 1 4 3 c0 2-2 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <path d="M16 24 c0 2 2 3 4 3 s4-1 4-3 c0-2-2-3-4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </symbol>
+
+    <!-- PAW: Dog friendly -->
+    <symbol id="ico-lapka" viewBox="0 0 40 40">
+      <ellipse cx="20" cy="26" rx="7" ry="6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <ellipse cx="13" cy="17" rx="3" ry="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <ellipse cx="20" cy="14" rx="2.5" ry="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <ellipse cx="27" cy="17" rx="3" ry="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </symbol>
+
+    <!-- WIFI: Signal waves -->
+    <symbol id="ico-wifi" viewBox="0 0 40 40">
+      <circle cx="20" cy="32" r="2.5" fill="currentColor"/>
+      <path d="M14 27 c3-3 9-3 12 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M10 22 c5-5 15-5 20 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M6 17 c7-7 21-7 28 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+    </symbol>
+
+    <!-- STAR: Rating -->
+    <symbol id="ico-star" viewBox="0 0 20 20">
+      <path d="M10 2 l2.5 5 5.5.8-4 3.9 .9 5.5L10 14.5 5.1 17.2l.9-5.5-4-3.9 5.5-.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" opacity="0.9"/>
+    </symbol>
+
+    <!-- PHONE: Contact -->
+    <symbol id="ico-telefon" viewBox="0 0 40 40">
+      <path d="M10 8 c0-1 2-2 4-1 l3 4 c1 1 0 3-1 4 l-1 1 c0 1 3 5 6 8 s7 6 8 6 l1-1 c1-1 3-2 4-1 l4 3 c1 2 0 4-1 4 c-4 3-9 1-14-4 s-10-10-13-14 c-5-5-3-10 0-14z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- Progress Bar -->
 <div id="progress" aria-hidden="true"></div>
 
 <!-- Navigation -->
 <nav aria-label="Nawigacja główna">
+  <a href="#hero" class="nav-brand" aria-label="Bar Agawa"><svg width="28" height="28"><use href="#ico-agawa"/></svg></a>
   <a href="#menu">Menu</a>
   <a href="#about" class="hide-mobile">O nas</a>
   <a href="#gallery" class="hide-mobile">Galeria</a>
   <a href="#events">Imprezy</a>
   <a href="#contact">Kontakt</a>
-  <a href="tel:+48506721654" class="nav-cta magnetic">📞 Zadzwoń</a>
+  <a href="tel:+485****1654" class="nav-cta magnetic"><svg width="14" height="14" style="color:#fff"><use href="#ico-telefon"/></svg> Zadzwoń</a>
 </nav>
 
 <!-- Hero -->
@@ -507,7 +633,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
   </div>
   
   <div class="hero-rating" data-reveal data-reveal-delay="4">
-    <span class="stars">★★★★★</span>
+    <span class="stars"><svg width="18" height="18" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="18" height="18" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="18" height="18" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="18" height="18" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="18" height="18" style="color:var(--spine)"><use href="#ico-star"/></svg></span>
     <span class="rating-text"><span class="rating-number counter" data-target="5.0">5.0</span> / 5 na Google</span>
   </div>
 </section>
@@ -527,7 +653,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
     <p class="menu-subtitle" data-reveal data-reveal-delay="1">* ceny przykładowe — aktualna oferta na miejscu</p>
     <div class="menu-grid">
       <div class="menu-card" data-tilt data-reveal>
-        <span class="card-icon">☕</span>
+        <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-kawa"/></svg></div>
         <h3>Kawa i herbata</h3>
         <div class="price">5 – 10 zł</div>
         <div class="items">
@@ -538,7 +664,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
         </div>
       </div>
       <div class="menu-card" data-tilt data-reveal data-reveal-delay="1">
-        <span class="card-icon">🍺</span>
+        <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-piwo"/></svg></div>
         <h3>Piwo</h3>
         <div class="price">6 – 8 zł</div>
         <div class="items">
@@ -549,7 +675,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
         </div>
       </div>
       <div class="menu-card" data-tilt data-reveal data-reveal-delay="2">
-        <span class="card-icon">🥤</span>
+        <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-napoj"/></svg></div>
         <h3>Napoje</h3>
         <div class="price">4 – 5 zł</div>
         <div class="items">
@@ -560,7 +686,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
         </div>
       </div>
       <div class="menu-card" data-tilt data-reveal data-reveal-delay="3">
-        <span class="card-icon">🥪</span>
+        <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-przekaski"/></svg></div>
         <h3>Przekąski</h3>
         <div class="price">8 – 10 zł</div>
         <div class="items">
@@ -592,12 +718,12 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
       <p>Latem ogródek żyje do zmroku. Zimą ciepło jest w środku i w nastroju. A jak masz ochotę na imprezę — urodziny, imieniny, spotkanie firmowe — zorganizujemy wszystko, ty się tylko baw.</p>
     </div>
     <div class="pills" data-reveal data-reveal-delay="2">
-      <span class="pill">☕ Kawa od rana</span>
-      <span class="pill">🌳 Ogródek pod drzewami</span>
-      <span class="pill">🎉 Imprezy na zamówienie</span>
-      <span class="pill">💰 Ceny 1–20 zł</span>
-      <span class="pill">🐕 Dog-friendly</span>
-      <span class="pill">📶 WiFi</span>
+      <span class="pill"><span class="icon"><svg width="16" height="16" style="color:var(--agave)"><use href="#ico-kawa"/></svg></span> Kawa od rana</span>
+      <span class="pill"><span class="icon"><svg width="16" height="16" style="color:var(--agave)"><use href="#ico-drzewo"/></svg></span> Ogródek pod drzewami</span>
+      <span class="pill"><span class="icon"><svg width="16" height="16" style="color:var(--spine)"><use href="#ico-impreza"/></svg></span> Imprezy na zamówienie</span>
+      <span class="pill"><span class="icon"><svg width="16" height="16" style="color:var(--spine)"><use href="#ico-cena"/></svg></span> Ceny 1–20 zł</span>
+      <span class="pill"><span class="icon"><svg width="16" height="16" style="color:var(--agave)"><use href="#ico-lapka"/></svg></span> Dog-friendly</span>
+      <span class="pill"><span class="icon"><svg width="16" height="16" style="color:var(--agave)"><use href="#ico-wifi"/></svg></span> WiFi</span>
     </div>
   </div>
 </section>
@@ -609,27 +735,27 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
     <h2 class="section-title" data-reveal style="text-align:center">Jak u nas jest</h2>
     <div class="gallery-grid" style="margin-top:2.8rem">
       <div class="gallery-item tall" data-reveal>
-        <div class="gallery-placeholder gallery-bg">🌿</div>
+        <div class="gallery-placeholder gallery-bg"><svg width="64" height="64" style="color:rgba(255,255,255,0.4)"><use href="#ico-drzewo"/></svg></div>
         <div class="gallery-label">Ogródek pod drzewami</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="1">
-        <div class="gallery-placeholder gallery-bg">☕</div>
+        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.4)"><use href="#ico-kawa"/></svg></div>
         <div class="gallery-label">Poranna kawa</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="2">
-        <div class="gallery-placeholder gallery-bg">🍺</div>
+        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.4)"><use href="#ico-piwo"/></svg></div>
         <div class="gallery-label">Piwo po pracy</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="3">
-        <div class="gallery-placeholder gallery-bg">🎉</div>
+        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.4)"><use href="#ico-impreza"/></svg></div>
         <div class="gallery-label">Imprezy okolicznościowe</div>
       </div>
       <div class="gallery-item tall" data-reveal data-reveal-delay="2">
-        <div class="gallery-placeholder gallery-bg">🌙</div>
+        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.3)"><use href="#ico-agawa"/></svg></div>
         <div class="gallery-label">Wieczorny klimat</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="4">
-        <div class="gallery-placeholder gallery-bg">🪴</div>
+        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.35)"><use href="#ico-agawa"/></svg></div>
         <div class="gallery-label">Nasze wnętrze</div>
       </div>
     </div>
@@ -671,17 +797,17 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
       <div class="review" data-reveal data-reveal-delay="1">
         <p class="review-text">Najlepszy bar w okolicy! Właściciele mega sympatyczni, ceny uczciwe, a ogródek latem to prawdziwa perełka. Polecam każdemu kto szuka miejsca bez pretensji.</p>
         <span class="review-author">Jakub K.</span>
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars"><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg></div>
       </div>
       <div class="review" data-reveal data-reveal-delay="2">
         <p class="review-text">Wpadamy tu regularnie z psem — zero problemu, zawsze miła obsługa. Kawa dobra, piwo zimne, a atmosfera jak u znajomych w domu. Tak trzymać!</p>
         <span class="review-author">Ala S.</span>
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars"><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg></div>
       </div>
       <div class="review" data-reveal data-reveal-delay="3">
         <p class="review-text">Organizowaliśmy tu urodziny na 20 osób — wszystko dopięte na ostatni guzik. Jedzenie, napoje, dekoracje — super kontakt i elastyczność. Wrócimy!</p>
         <span class="review-author">Marta W.</span>
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars"><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg><svg width="14" height="14" style="color:var(--spine)"><use href="#ico-star"/></svg></div>
       </div>
     </div>
   </div>
@@ -693,9 +819,9 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
     <div>
       <div class="section-eyebrow" data-reveal>Kontakt</div>
       <h2 class="section-title" data-reveal>Odwiedź nas</h2>
-      <a href="tel:+48506721654" class="contact-phone" data-reveal data-reveal-delay="1">
-        📞 506 721 654
-      </a>
+      <a href="tel:+485****1654" class="contact-phone" data-reveal data-reveal-delay="1">
+              <svg width="24" height="24" style="color:var(--agave)"><use href="#ico-telefon"/></svg> 506 721 654
+            </a>
       <div class="contact-address" data-reveal data-reveal-delay="2">
         <strong>Bar Agawa</strong><br>
         ul. Gustawa Morcinka 1<br>
@@ -718,6 +844,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
 
 <!-- Footer -->
 <footer>
+  <div class="footer-mark"><svg width="48" height="48" style="color:var(--agave)"><use href="#ico-agawa"/></svg></div>
   © 2026 Bar Agawa<span class="sep">·</span><a href="https://maps.app.goo.gl/7FSq42P2tgqMcsmGA" target="_blank" rel="noopener">Morcinka 1, Dąbrowa Górnicza</a>
   <span class="footer-tagline">Wpadaj jak do siebie.</span>
 </footer>
