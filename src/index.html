@@ -22,7 +22,7 @@
   "image":"",
   "address":{"@type":"PostalAddress","streetAddress":"Gustawa Morcinka 1","addressLocality":"Dąbrowa Górnicza","postalCode":"41-303","addressCountry":"PL"},
   "telephone":"+48506721654",
-  "priceRange":"1-20 PLN",
+  "priceRange":"7-15 PLN",
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"12"},
   "openingHoursSpecification":[
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"22:00"},
@@ -256,6 +256,7 @@ section{padding:7rem 1.5rem;position:relative}
 .menu-card .items span:last-child{border-bottom:none}
 .menu-card:hover .items span{color:var(--earth)}
 .menu-card .items span:hover{padding-left:.5rem;color:var(--agave-deep);border-bottom-color:var(--agave-silver)}
+.menu-card .items em{font-style:normal;float:right;font-weight:600;color:var(--spine);font-size:.82rem}
 
 /* ═══════ ABOUT ═══════ */
 #about{padding:8rem 1.5rem;position:relative;overflow:hidden}
@@ -653,50 +654,54 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
   <div class="container">
     <div class="section-eyebrow" data-reveal>Oferta</div>
     <h2 class="section-title" data-reveal style="text-align:center">Co podajemy</h2>
-    <p class="menu-subtitle" data-reveal data-reveal-delay="1">* ceny przykładowe — aktualna oferta na miejscu</p>
     <div class="menu-grid">
       <div class="menu-card" data-tilt data-reveal>
         <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-kawa"/></svg></div>
         <h3>Kawa i herbata</h3>
-        <div class="price">5 – 10 zł</div>
+        <div class="price">7 – 10 zł</div>
         <div class="items">
-          <span>Espresso</span>
-          <span>Americano</span>
-          <span>Latte</span>
-          <span>Herbata liściasta</span>
+          <span>Kawa <em>7 zł</em></span>
+          <span>Herbata <em>7 zł</em></span>
+          <span>Kawa mrożona <em>10 zł</em></span>
+          <span>Herbata mrożona <em>10 zł</em></span>
         </div>
       </div>
       <div class="menu-card" data-tilt data-reveal data-reveal-delay="1">
         <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-piwo"/></svg></div>
         <h3>Piwo</h3>
-        <div class="price">6 – 8 zł</div>
+        <div class="price">12 – 15 zł</div>
         <div class="items">
-          <span>Lager lane</span>
-          <span>Pszeniczne</span>
-          <span>IPA kraftowe</span>
-          <span>Piwo bezalkoholowe</span>
+          <span>Piwo lane <em>12 zł</em></span>
+          <span>Piwo grzane z miodem i pomarańczą <em>15 zł</em></span>
         </div>
       </div>
       <div class="menu-card" data-tilt data-reveal data-reveal-delay="2">
         <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-napoj"/></svg></div>
-        <h3>Napoje</h3>
-        <div class="price">4 – 5 zł</div>
+        <h3>Napoje i soki</h3>
+        <div class="price">7 zł</div>
         <div class="items">
-          <span>Lemoniada domowa</span>
-          <span>Sok pomarańczowy</span>
-          <span>Woda mineralna</span>
-          <span>Cola / Fanta</span>
+          <span>Napoje <em>7 zł</em></span>
+          <span>Soki owocowe <em>7 zł</em></span>
         </div>
       </div>
       <div class="menu-card" data-tilt data-reveal data-reveal-delay="3">
+        <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-napoj"/></svg></div>
+        <h3>Drinki</h3>
+        <div class="price">12 – 13 zł</div>
+        <div class="items">
+          <span>Wódka z sokiem <em>12 zł</em></span>
+          <span>Gin z tonikiem <em>13 zł</em></span>
+          <span>Jabłkówka <em>12 zł</em></span>
+          <span>Wiśniówka z colą <em>12 zł</em></span>
+        </div>
+      </div>
+      <div class="menu-card" data-tilt data-reveal data-reveal-delay="4">
         <div class="card-icon"><svg width="28" height="28" style="color:var(--agave)"><use href="#ico-przekaski"/></svg></div>
         <h3>Przekąski</h3>
-        <div class="price">8 – 10 zł</div>
+        <div class="price">10 – 12 zł</div>
         <div class="items">
-          <span>Tost z serem</span>
-          <span>Kanapka z hummusem</span>
-          <span>Chipsy domowe</span>
-          <span>Orzeszki na ciepło</span>
+          <span>Frytki <em>10 zł</em></span>
+          <span>Tosty <em>12 zł</em></span>
         </div>
       </div>
     </div>
