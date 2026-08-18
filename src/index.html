@@ -136,32 +136,33 @@ nav .nav-cta:hover{background:var(--copper-light)}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.3)}
 .btn-ghost:hover{border-color:rgba(255,255,255,0.6)}
 
-/* ─── INTRO: Editorial drop-cap ─── */
-.intro{padding:7rem clamp(1.5rem,5vw,4rem);max-width:680px;margin:0 auto}
-.intro p{font-size:1.1rem;line-height:1.9;color:var(--text-muted);margin-bottom:1.5rem}
-.intro p:first-child{font-size:1.15rem;color:var(--text)}
-.intro p:first-child::first-letter{font-family:var(--font-display);font-size:3.8rem;float:left;
-  line-height:.75;padding-right:.6rem;padding-top:.35rem;font-weight:700;color:var(--accent)}
-.intro-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem}
-.intro-pills span{padding:.4rem .9rem;border-radius:100px;font-size:.75rem;font-weight:500;
+/* ─── INTRO: Compact ─── */
+.intro{padding:4rem clamp(1.5rem,5vw,4rem);max-width:680px;margin:0 auto;text-align:center}
+.intro p{font-size:1.05rem;line-height:1.8;color:var(--text-muted);margin-bottom:1.5rem}
+.intro-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;justify-content:center}
+.intro-pills span{padding:.45rem 1rem;border-radius:100px;font-size:.8rem;font-weight:500;
   color:var(--accent);background:rgba(61,107,79,0.06);border:1px solid rgba(61,107,79,0.12)}
 
-/* ─── MENU: Clean table-style ─── */
+/* ─── MENU: Card grid (upgraded) ─── */
 .menu-section{padding:6rem clamp(1.5rem,5vw,4rem);background:var(--bg-warm)}
-.menu-section .container{max-width:900px;margin:0 auto}
+.menu-section .container{max-width:1000px;margin:0 auto}
 .section-label{font-family:var(--font-display);font-size:.7rem;text-transform:uppercase;
   letter-spacing:.15em;color:var(--accent);font-weight:600;margin-bottom:.6rem}
 .section-heading{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.5rem);
   font-weight:700;letter-spacing:-.02em;margin-bottom:3rem}
-.menu-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.5rem}
-.menu-cat h3{font-family:var(--font-display);font-size:1rem;font-weight:600;
-  padding-bottom:.6rem;border-bottom:2px solid var(--accent);margin-bottom:1rem;
-  display:inline-block;color:var(--text)}
-.menu-cat ul{list-style:none}
-.menu-cat li{display:flex;justify-content:space-between;align-items:baseline;
-  padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.9rem}
-.menu-cat li:last-child{border-bottom:none}
-.menu-cat .price{font-family:var(--font-display);font-weight:600;color:var(--copper);white-space:nowrap}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.menu-card{background:var(--bg);border-radius:14px;padding:1.6rem;
+  border:1px solid var(--border);transition:transform .3s ease,box-shadow .3s ease}
+.menu-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.06)}
+.menu-card h3{font-family:var(--font-display);font-size:.9rem;font-weight:600;
+  color:var(--accent);margin-bottom:.3rem}
+.menu-card .price-range{font-family:var(--font-display);font-size:1.4rem;font-weight:700;
+  color:var(--copper);margin-bottom:.8rem}
+.menu-card ul{list-style:none}
+.menu-card li{font-size:.85rem;color:var(--text-muted);padding:.35rem 0;
+  border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.menu-card li:last-child{border-bottom:none}
+.menu-card li .item-price{font-weight:600;color:var(--copper);font-size:.8rem}
 
 /* ─── PHOTO BREAK: Full-bleed ─── */
 .photo-break{width:100%;height:clamp(250px,40vw,450px);overflow:hidden;position:relative}
@@ -282,13 +283,12 @@ footer .links a:hover{color:#fff}
   </div>
 </section>
 
-<!-- Intro: Editorial drop-cap -->
+<!-- Intro: Compact, not a blog post -->
 <section class="intro" data-reveal>
-  <p>Bar Agawa to bar sąsiedzki w Dąbrowie Górniczej przy ul. Morcinka 1, otwarty od poniedziałku do niedzieli. Serwujemy kawę (7 zł), piwo lane (12 zł), drinki (12-13 zł) i przekąski. Mamy ogródek pod drzewami i organizujemy imprezy okolicznościowe na 10-30 osób.</p>
-  <p>Stoimy tu od lat — nie jako lokal z ambicją na coś wielkiego, a jako miejsce, do którego wchodzisz bez zastanowienia. Rano po kawę przed pracą, po południu na spokojne piwo z sąsiadem, wieczorem na pogaduszki przy stoliku w ogródku.</p>
-  <p>Nie mamy menu na dwadzieścia stron. Mamy uczciwe ceny, ludzkie podejście i ten rodzaj atmosfery, który sprawia, że wracasz.</p>
+  <p>Bar Agawa to bar sąsiedzki w Dąbrowie Górniczej przy ul. Morcinka 1. Stoimy tu od lat — nie jako lokal z ambicją na coś wielkiego, a jako miejsce, do którego wchodzisz bez zastanowienia.</p>
   <div class="intro-pills">
-    <span>☕ Kawa od rana</span>
+    <span>☕ Kawa od rana · 7 zł</span>
+    <span>🍺 Piwo lane · 12 zł</span>
     <span>🌳 Ogródek pod drzewami</span>
     <span>🎉 Imprezy 10-30 osób</span>
     <span>🐾 Pet-friendly</span>
@@ -301,54 +301,54 @@ footer .links a:hover{color:#fff}
   <div class="container" data-reveal>
     <div class="section-label">Oferta</div>
     <h2 class="section-heading">Co podajemy</h2>
-    <div class="menu-categories">
-      <div class="menu-cat">
+    <div class="menu-grid">
+      <div class="menu-card">
         <h3>Kawa i herbata</h3>
+        <div class="price-range">7–10 zł</div>
         <ul>
-          <li><span>Kawa</span><span class="price">7 zł</span></li>
-          <li><span>Herbata</span><span class="price">7 zł</span></li>
-          <li><span>Kawa mrożona</span><span class="price">10 zł</span></li>
-          <li><span>Herbata mrożona</span><span class="price">10 zł</span></li>
+          <li><span>Kawa</span><span class="item-price">7 zł</span></li>
+          <li><span>Herbata</span><span class="item-price">7 zł</span></li>
+          <li><span>Kawa mrożona</span><span class="item-price">10 zł</span></li>
+          <li><span>Herbata mrożona</span><span class="item-price">10 zł</span></li>
         </ul>
       </div>
-      <div class="menu-cat">
+      <div class="menu-card">
         <h3>Piwo</h3>
+        <div class="price-range">12–15 zł</div>
         <ul>
-          <li><span>Piwo lane</span><span class="price">12 zł</span></li>
-          <li><span>Piwo grzane z miodem i pomarańczą</span><span class="price">15 zł</span></li>
+          <li><span>Piwo lane</span><span class="item-price">12 zł</span></li>
+          <li><span>Grzane z miodem</span><span class="item-price">15 zł</span></li>
         </ul>
       </div>
-      <div class="menu-cat">
+      <div class="menu-card">
         <h3>Napoje i soki</h3>
+        <div class="price-range">7 zł</div>
         <ul>
-          <li><span>Napoje</span><span class="price">7 zł</span></li>
-          <li><span>Soki owocowe</span><span class="price">7 zł</span></li>
+          <li><span>Napoje</span><span class="item-price">7 zł</span></li>
+          <li><span>Soki owocowe</span><span class="item-price">7 zł</span></li>
         </ul>
       </div>
-      <div class="menu-cat">
+      <div class="menu-card">
         <h3>Drinki</h3>
+        <div class="price-range">12–13 zł</div>
         <ul>
-          <li><span>Wódka z sokiem</span><span class="price">12 zł</span></li>
-          <li><span>Gin z tonikiem</span><span class="price">13 zł</span></li>
-          <li><span>Jabłkówka</span><span class="price">12 zł</span></li>
-          <li><span>Wiśniówka z colą</span><span class="price">12 zł</span></li>
+          <li><span>Wódka z sokiem</span><span class="item-price">12 zł</span></li>
+          <li><span>Gin z tonikiem</span><span class="item-price">13 zł</span></li>
+          <li><span>Jabłkówka</span><span class="item-price">12 zł</span></li>
+          <li><span>Wiśniówka z colą</span><span class="item-price">12 zł</span></li>
         </ul>
       </div>
-      <div class="menu-cat">
+      <div class="menu-card">
         <h3>Przekąski</h3>
+        <div class="price-range">10–12 zł</div>
         <ul>
-          <li><span>Frytki</span><span class="price">10 zł</span></li>
-          <li><span>Tosty</span><span class="price">12 zł</span></li>
+          <li><span>Frytki</span><span class="item-price">10 zł</span></li>
+          <li><span>Tosty</span><span class="item-price">12 zł</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Photo break -->
-<div class="photo-break">
-  <img src="img/20260818_wa0007.jpg" alt="Stół bankietowy z jedzeniem na imprezę okolicznościową Bar Agawa" loading="lazy">
-</div>
 
 <!-- Events: Asymmetric dark -->
 <section class="events" id="events">
