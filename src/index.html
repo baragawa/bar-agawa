@@ -287,7 +287,8 @@ section{padding:7rem 1.5rem;position:relative}
 .gallery-item:hover{transform:translateY(-4px) scale(1.01);box-shadow:var(--shadow-xl)}
 .gallery-item.tall{grid-row:span 2}
 /* Clip-path circle reveal */
-.gallery-bg{width:100%;height:100%;object-fit:cover;
+.gallery-bg{width:100%;height:100%;object-fit:cover;object-position:center;
+  position:absolute;inset:0;
   clip-path:circle(0% at 50% 50%);transition:clip-path .8s var(--ease-out-expo),transform .5s}
 .gallery-item.revealed .gallery-bg{clip-path:circle(80% at 50% 50%)}
 .gallery-item:hover .gallery-bg{transform:scale(1.08)}
@@ -737,28 +738,28 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
     <h2 class="section-title" data-reveal style="text-align:center">Jak u nas jest</h2>
     <div class="gallery-grid" style="margin-top:2.8rem">
       <div class="gallery-item tall" data-reveal>
-        <div class="gallery-placeholder gallery-bg"><svg width="64" height="64" style="color:rgba(255,255,255,0.4)"><use href="#ico-drzewo"/></svg></div>
+        <img src="img/20260806_wa0001.jpg" alt="Ogródek Bar Agawa — parasole, stoliki, zieleń" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Ogródek pod drzewami</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="1">
-        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.4)"><use href="#ico-kawa"/></svg></div>
-        <div class="gallery-label">Poranna kawa</div>
+        <img src="img/20260818_wa0003.jpg" alt="Bruschetta z pomidorami i mozzarellą" class="gallery-bg" loading="lazy">
+        <div class="gallery-label">Przekąski na imprezę</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="2">
-        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.4)"><use href="#ico-piwo"/></svg></div>
-        <div class="gallery-label">Piwo po pracy</div>
+        <img src="img/20260806_wa0002.jpg" alt="Ogródek — ławy piknikowe i kwiaty" class="gallery-bg" loading="lazy">
+        <div class="gallery-label">Piwo w ogródku</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="3">
-        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.4)"><use href="#ico-impreza"/></svg></div>
+        <img src="img/20260818_wa0010.jpg" alt="Impreza urodzinowa — udekorowany stół" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Imprezy okolicznościowe</div>
       </div>
       <div class="gallery-item tall" data-reveal data-reveal-delay="2">
-        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.3)"><use href="#ico-agawa"/></svg></div>
-        <div class="gallery-label">Wieczorny klimat</div>
+        <img src="img/20260818_wa0007.jpg" alt="Stół bankietowy z jedzeniem na 18-tkę" class="gallery-bg" loading="lazy">
+        <div class="gallery-label">Bankiety i urodziny</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="4">
-        <div class="gallery-placeholder gallery-bg"><svg width="56" height="56" style="color:rgba(255,255,255,0.35)"><use href="#ico-agawa"/></svg></div>
-        <div class="gallery-label">Nasze wnętrze</div>
+        <img src="img/20260818_wa0006.jpg" alt="Domowe ciasto czekoladowo-kokosowe" class="gallery-bg" loading="lazy">
+        <div class="gallery-label">Domowe wypieki</div>
       </div>
     </div>
   </div>
