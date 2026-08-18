@@ -9,7 +9,20 @@
 <meta property="og:description" content="Bar sąsiedzki na Morcinka. Kawa rano, piwo wieczorem, imprezy kiedy chcesz.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bar-agawa.vercel.app">
+<meta property="og:image" content="https://bar-agawa.vercel.app/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bar Agawa — Wpadaj jak do siebie">
+<meta name="twitter:description" content="Bar sąsiedzki w Dąbrowie Górniczej. Ogródek pod drzewami, piwo lane, imprezy na 10-30 osób.">
+<meta name="twitter:image" content="https://bar-agawa.vercel.app/img/og-image.jpg">
 <meta name="theme-color" content="#3D8B6E">
+<meta name="geo.position" content="50.3219;19.1941">
+<meta name="geo.placename" content="Dąbrowa Górnicza">
+<meta name="geo.region" content="PL-24">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://bar-agawa.vercel.app">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,19 +30,46 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"LocalBusiness",
+  "@type":"BarOrPub",
   "name":"Bar Agawa",
-  "image":"",
-  "address":{"@type":"PostalAddress","streetAddress":"Gustawa Morcinka 1","addressLocality":"Dąbrowa Górnicza","postalCode":"41-303","addressCountry":"PL"},
+  "alternateName":"Kawiarnia Agawa",
+  "description":"Bar sąsiedzki w Dąbrowie Górniczej przy ul. Morcinka 1. Kawa od rana, piwo lane, drinki, przekąski. Ogródek pod drzewami. Imprezy okolicznościowe na 10-30 osób — urodziny, 18-stki, wieczory kawalerskie, spotkania firmowe.",
+  "image":"https://bar-agawa.vercel.app/img/og-image.jpg",
+  "address":{"@type":"PostalAddress","streetAddress":"ul. Gustawa Morcinka 1","addressLocality":"Dąbrowa Górnicza","postalCode":"41-303","addressRegion":"śląskie","addressCountry":"PL"},
+  "geo":{"@type":"GeoCoordinates","latitude":50.3219,"longitude":19.1941},
   "telephone":"+48506721654",
   "priceRange":"7-15 PLN",
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"12"},
+  "servesCuisine":"Przekąski barowe, kawa, piwo, drinki",
+  "acceptsReservations":"True",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"12","bestRating":"5"},
   "openingHoursSpecification":[
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"22:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"23:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"20:00"}
   ],
-  "url":"https://bar-agawa.vercel.app"
+  "url":"https://bar-agawa.vercel.app",
+  "sameAs":["https://maps.app.goo.gl/7FSq42P2tgqMcsmGA"],
+  "hasMap":"https://maps.app.goo.gl/7FSq42P2tgqMcsmGA",
+  "amenityFeature":[
+    {"@type":"LocationFeatureSpecification","name":"Ogródek","value":true},
+    {"@type":"LocationFeatureSpecification","name":"WiFi","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Dog-friendly","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Imprezy prywatne","value":true}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Jakie są godziny otwarcia Bar Agawa?","acceptedAnswer":{"@type":"Answer","text":"Bar Agawa jest otwarty od poniedziałku do piątku w godzinach 8:00-22:00, w soboty 10:00-23:00, a w niedziele 10:00-20:00."}},
+    {"@type":"Question","name":"Czy Bar Agawa organizuje imprezy okolicznościowe?","acceptedAnswer":{"@type":"Answer","text":"Tak, organizujemy imprezy na 10-30 osób — urodziny, 18-stki, wieczory kawalerskie, panieńskie, spotkania firmowe i inne okazje. Zadzwoń pod 506 721 654 żeby zarezerwować termin."}},
+    {"@type":"Question","name":"Ile kosztuje piwo w Barze Agawa?","acceptedAnswer":{"@type":"Answer","text":"Piwo lane kosztuje 12 zł, a piwo grzane z miodem i pomarańczą 15 zł. Drinki (wódka z sokiem, gin z tonikiem, jabłkówka, wiśniówka z colą) kosztują 12-13 zł."}},
+    {"@type":"Question","name":"Czy Bar Agawa ma ogródek?","acceptedAnswer":{"@type":"Answer","text":"Tak, mamy ogródek na zewnątrz pod drzewami z parasolami — idealne miejsce na piwo lub kawę w ciepłe dni."}},
+    {"@type":"Question","name":"Gdzie znajduje się Bar Agawa?","acceptedAnswer":{"@type":"Answer","text":"Bar Agawa znajduje się przy ul. Gustawa Morcinka 1, 41-303 Dąbrowa Górnicza. Łatwy dojazd, parking w okolicy."}},
+    {"@type":"Question","name":"Czy Bar Agawa jest dog-friendly?","acceptedAnswer":{"@type":"Answer","text":"Tak, psy są u nas mile widziane zarówno w ogródku jak i wewnątrz lokalu."}}
+  ]
 }
 </script>
 <style>
@@ -721,6 +761,7 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
     <div class="section-eyebrow" data-reveal>O nas</div>
     <h2 class="section-title" data-reveal>Dlaczego Agawa?</h2>
     <div class="editorial" data-reveal data-reveal-delay="1">
+      <p>Bar Agawa to bar sąsiedzki w Dąbrowie Górniczej przy ul. Morcinka 1, otwarty od poniedziałku do niedzieli. Serwujemy kawę (7 zł), piwo lane (12 zł), drinki (12-13 zł) i przekąski. Mamy ogródek pod drzewami i organizujemy imprezy okolicznościowe na 10-30 osób — urodziny, 18-stki, wieczory kawalerskie, spotkania firmowe. Ocena Google: 5.0/5.</p>
       <p>Agawa stoi na Morcinka od lat — nie jako lokal z ambicją na coś wielkiego, a jako miejsce, do którego wchodzisz bez zastanowienia. Rano po kawę przed pracą, po południu na spokojne piwo z sąsiadem, wieczorem na pogaduszki przy stoliku w ogródku pod drzewami.</p>
       <p>Nie mamy menu na dwadzieścia stron ani kelnerów w krawatach. Mamy za to uczciwe ceny, ludzkie podejście i ten rodzaj atmosfery, który sprawia, że wracasz. Bo tu nikt nie udaje — ani bar, ani goście.</p>
       <p>Latem ogródek żyje do zmroku. Zimą ciepło jest w środku i w nastroju. A jak masz ochotę na imprezę — urodziny, imieniny, spotkanie firmowe — zorganizujemy wszystko, ty się tylko baw.</p>
@@ -782,9 +823,9 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
   <canvas id="fireflies" aria-hidden="true"></canvas>
   <div class="pattern-overlay" aria-hidden="true"></div>
   <div class="container">
-    <h2 data-reveal>Imprezy prywatne</h2>
-    <p data-reveal data-reveal-delay="1">Urodziny, imieniny, spotkanie po pracy, wieczór kawalerski czy po prostu „bo tak".<br>Zorganizujemy wszystko — ty się tylko baw.</p>
-    <p class="capacity" data-reveal data-reveal-delay="2">Kameralne imprezy na 10–30 osób · Ogródek lub salka wewnętrzna</p>
+    <h2 data-reveal>Sala na imprezę w Dąbrowie Górniczej</h2>
+    <p data-reveal data-reveal-delay="1">Urodziny, 18-stki, wieczory kawalerskie i panieńskie, imprezy firmowe, spotkania po pracy, imieniny czy po prostu „bo tak".<br>Zorganizujemy wszystko — ty się tylko baw.</p>
+    <p class="capacity" data-reveal data-reveal-delay="2">Kameralne imprezy okolicznościowe na 10–30 osób · Ogródek lub salka wewnętrzna · Wynajem sali z obsługą</p>
     <a href="tel:+48506721654" class="btn magnetic" data-reveal data-reveal-delay="3"><span>Zadzwoń i zarezerwuj</span> <span class="btn-arrow">→</span></a>
   </div>
 </section>
