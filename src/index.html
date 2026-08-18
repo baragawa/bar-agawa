@@ -26,6 +26,7 @@
 <link rel="canonical" href="https://bar-agawa.vercel.app">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -500,6 +501,10 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
 
 /* ═══════ SMOOTH COUNTER ═══════ */
 .counter{font-variant-numeric:tabular-nums}
+
+@media print{body{background:#fff;color:#000}nav,#progress,#cookie,#fireflies,.hero-agave,.atmosphere,.btn,.wave-divider{display:none!important}
+section{padding:2rem 0;page-break-inside:avoid}#hero{min-height:auto;padding:2rem}
+.menu-card{break-inside:avoid;border:1px solid #ccc}footer{border-top:1px solid #ccc}}
 </style>
 </head>
 <body>
@@ -786,27 +791,27 @@ footer .footer-tagline{display:block;margin-top:.5rem;font-style:italic;opacity:
     <h2 class="section-title" data-reveal style="text-align:center">Jak u nas jest</h2>
     <div class="gallery-grid" style="margin-top:2.8rem">
       <div class="gallery-item tall" data-reveal>
-        <img src="img/20260806_wa0001.jpg" alt="Ogródek piwny Bar Agawa Dąbrowa Górnicza — stoliki pod drzewami z parasolami" class="gallery-bg" loading="lazy">
+        <img src="img/20260806_wa0001.jpg" width="1200" height="900" alt="Ogródek piwny Bar Agawa Dąbrowa Górnicza — stoliki pod drzewami z parasolami" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Ogródek pod drzewami</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="1">
-        <img src="img/20260818_wa0003.jpg" alt="Przekąski na imprezę okolicznościową — bruschetta w Barze Agawa" class="gallery-bg" loading="lazy">
+        <img src="img/20260818_wa0003.jpg" width="1200" height="1600" alt="Przekąski na imprezę okolicznościową — bruschetta w Barze Agawa" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Przekąski na imprezę</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="2">
-        <img src="img/20260806_wa0002.jpg" alt="Bar z ogródkiem Dąbrowa Górnicza — ławy piknikowe i kwiaty" class="gallery-bg" loading="lazy">
+        <img src="img/20260806_wa0002.jpg" width="1200" height="900" alt="Bar z ogródkiem Dąbrowa Górnicza — ławy piknikowe i kwiaty" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Piwo w ogródku</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="3">
-        <img src="img/20260818_wa0010.jpg" alt="Sala na urodziny Dąbrowa Górnicza — udekorowany stół na 18-tkę w Barze Agawa" class="gallery-bg" loading="lazy">
+        <img src="img/20260818_wa0010.jpg" width="1200" height="1600" alt="Sala na urodziny Dąbrowa Górnicza — udekorowany stół na 18-tkę w Barze Agawa" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Imprezy okolicznościowe</div>
       </div>
       <div class="gallery-item tall" data-reveal data-reveal-delay="2">
-        <img src="img/20260818_wa0007.jpg" alt="Wynajem sali na urodziny — stół bankietowy z jedzeniem Bar Agawa" class="gallery-bg" loading="lazy">
+        <img src="img/20260818_wa0007.jpg" width="1200" height="1600" alt="Wynajem sali na urodziny — stół bankietowy z jedzeniem Bar Agawa" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Bankiety i urodziny</div>
       </div>
       <div class="gallery-item" data-reveal data-reveal-delay="4">
-        <img src="img/20260818_wa0006.jpg" alt="Domowe ciasto na imprezę okolicznościową Bar Agawa Dąbrowa Górnicza" class="gallery-bg" loading="lazy">
+        <img src="img/20260818_wa0006.jpg" width="1200" height="1600" alt="Domowe ciasto na imprezę okolicznościową Bar Agawa Dąbrowa Górnicza" class="gallery-bg" loading="lazy">
         <div class="gallery-label">Domowe wypieki</div>
       </div>
     </div>
