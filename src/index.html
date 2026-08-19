@@ -165,7 +165,7 @@ nav .nav-cta{background:linear-gradient(135deg,var(--agave),var(--agave-deep));c
   transition:transform .3s var(--ease-spring),box-shadow .3s;box-shadow:var(--shadow-sm)}
 nav .nav-cta:hover{box-shadow:var(--shadow-glow);transform:scale(1.04)}
 nav .nav-cta:active{transform:scale(0.96)}
-@media(max-width:768px){nav a.hide-mobile{display:none}}
+
 
 /* ═══════ ORGANIC WAVE DIVIDERS ═══════ */
 .wave-divider{width:100%;height:60px;display:block;position:relative}
@@ -759,12 +759,13 @@ section{padding:2rem 0;page-break-inside:avoid}#hero{min-height:auto;padding:2re
 <nav aria-label="Nawigacja główna">
   <a href="#hero" class="nav-brand" aria-label="Bar Agawa"><svg width="28" height="28"><use href="#ico-agawa"/></svg></a>
   <a href="#menu">Menu</a>
-  <a href="#about" class="hide-mobile">O nas</a>
-  <a href="#gallery" class="hide-mobile">Galeria</a>
+  <a href="#about" class="nav-desktop">O nas</a>
+  <a href="#gallery" class="nav-desktop">Galeria</a>
   <a href="#events">Imprezy</a>
-  <a href="#faq" class="hide-mobile">FAQ</a>
-  <a href="/blog" class="hide-mobile">Blog</a>
-  <a href="#contact">Kontakt</a>
+  <a href="#faq" class="nav-desktop">FAQ</a>
+  <a href="/blog" class="nav-desktop">Blog</a>
+  <a href="#contact" class="nav-desktop">Kontakt</a>
+  <button class="nav-burger" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <a href="tel:+485****1654" class="nav-cta magnetic"><svg width="14" height="14" style="color:#fff"><use href="#ico-telefon"/></svg> Zadzwoń</a>
 </nav>
 
