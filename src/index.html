@@ -204,8 +204,23 @@
 [data-theme="dark"] footer{background:var(--sand);border-top-color:rgba(255,255,255,0.06)}
 [data-theme="dark"] footer a{color:var(--agave);opacity:.8}
 [data-theme="dark"] footer .statement{color:rgba(232,226,217,0.3)}
-[data-theme="dark"] #faq details{background:var(--sand);border-color:rgba(255,255,255,0.1)}
-[data-theme="dark"] #faq details[open]{border-color:var(--agave)}
+.faq-summary{font-weight:600;cursor:pointer;color:var(--agave-deep);list-style:none}
+.faq-summary::marker{display:none}
+.faq-summary::-webkit-details-marker{display:none}
+.faq-answer{margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7}
+[data-theme="dark"] .faq-summary{color:var(--agave)}
+[data-theme="dark"] .faq-answer{color:rgba(232,226,217,0.65)}
+.faq-item{margin-bottom:1.2rem;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08);transition:border-color .2s}
+.faq-item-last{margin-bottom:0}
+.faq-item[open]{border-color:var(--agave)}
+[data-theme="dark"] .faq-summary{font-weight:600;cursor:pointer;color:var(--agave-deep);list-style:none}
+.faq-summary::marker{display:none}
+.faq-summary::-webkit-details-marker{display:none}
+.faq-answer{margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7}
+[data-theme="dark"] .faq-summary{color:var(--agave)}
+[data-theme="dark"] .faq-answer{color:rgba(232,226,217,0.65)}
+.faq-item{background:var(--sand);border-color:rgba(255,255,255,0.1)}
+[data-theme="dark"] .faq-item[open]{border-color:var(--agave)}
 [data-theme="dark"] #faq summary{color:var(--earth)}
 
 /* Dark mode toggle button */
@@ -1130,29 +1145,29 @@ section{padding:2rem 0;page-break-inside:avoid}#hero{min-height:auto;padding:2re
     <div class="section-eyebrow" data-reveal>Pytania</div>
     <h2 class="section-title" data-reveal id="faq-heading">Najczęściej zadawane pytania</h2>
     <div style="margin-top:2rem" data-reveal data-reveal-delay="1">
-      <details style="margin-bottom:1.2rem;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08)">
-        <summary style="font-weight:600;cursor:pointer;color:var(--agave-deep)">Jakie są godziny otwarcia Bar Agawa?</summary>
-        <p style="margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7">Bar Agawa jest otwarty od poniedziałku do soboty od 11:00, a w niedziele od 13:00. Bez ustalonej godziny zamknięcia.</p>
+      <details class="faq-item">
+        <summary class="faq-summary">Jakie są godziny otwarcia Bar Agawa?</summary>
+        <p class="faq-answer">Bar Agawa jest otwarty od poniedziałku do soboty od 11:00, a w niedziele od 13:00. Bez ustalonej godziny zamknięcia.</p>
       </details>
-      <details style="margin-bottom:1.2rem;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08)">
-        <summary style="font-weight:600;cursor:pointer;color:var(--agave-deep)">Czy organizujecie imprezy okolicznościowe?</summary>
-        <p style="margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7">Tak, organizujemy imprezy na 10-30 osób: urodziny, 18-stki, wieczory kawalerskie, panieńskie, spotkania firmowe. Zadzwoń pod 600 198 190 żeby zarezerwować termin.</p>
+      <details class="faq-item">
+        <summary class="faq-summary">Czy organizujecie imprezy okolicznościowe?</summary>
+        <p class="faq-answer">Tak, organizujemy imprezy na 10-30 osób: urodziny, 18-stki, wieczory kawalerskie, panieńskie, spotkania firmowe. Zadzwoń pod 600 198 190 żeby zarezerwować termin.</p>
       </details>
-      <details style="margin-bottom:1.2rem;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08)">
-        <summary style="font-weight:600;cursor:pointer;color:var(--agave-deep)">Ile kosztuje piwo?</summary>
-        <p style="margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7">Piwo lane kosztuje 12 zł, piwo grzane z miodem i pomarańczą 15 zł. Drinki (wódka z sokiem, gin z tonikiem, jabłkówka, wiśniówka z colą) to 12-13 zł.</p>
+      <details class="faq-item">
+        <summary class="faq-summary">Ile kosztuje piwo?</summary>
+        <p class="faq-answer">Piwo lane kosztuje 12 zł, piwo grzane z miodem i pomarańczą 15 zł. Drinki (wódka z sokiem, gin z tonikiem, jabłkówka, wiśniówka z colą) to 12-13 zł.</p>
       </details>
-      <details style="margin-bottom:1.2rem;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08)">
-        <summary style="font-weight:600;cursor:pointer;color:var(--agave-deep)">Czy Bar Agawa ma ogródek?</summary>
-        <p style="margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7">Tak, mamy ogródek piwny na zewnątrz pod drzewami z parasolami. Idealne miejsce na piwo lub kawę w ciepłe dni.</p>
+      <details class="faq-item">
+        <summary class="faq-summary">Czy Bar Agawa ma ogródek?</summary>
+        <p class="faq-answer">Tak, mamy ogródek piwny na zewnątrz pod drzewami z parasolami. Idealne miejsce na piwo lub kawę w ciepłe dni.</p>
       </details>
-      <details style="margin-bottom:1.2rem;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08)">
-        <summary style="font-weight:600;cursor:pointer;color:var(--agave-deep)">Czy bar jest pet-friendly?</summary>
-        <p style="margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7">Tak, zwierzaki są u nas mile widziane. Psy, koty, cokolwiek masz. Zarówno w ogródku jak i wewnątrz lokalu.</p>
+      <details class="faq-item">
+        <summary class="faq-summary">Czy bar jest pet-friendly?</summary>
+        <p class="faq-answer">Tak, zwierzaki są u nas mile widziane. Psy, koty, cokolwiek masz. Zarówno w ogródku jak i wewnątrz lokalu.</p>
       </details>
-      <details style="margin-bottom:0;padding:1.2rem 1.5rem;background:var(--milk);border-radius:var(--radius-md);border:1px solid rgba(61,139,110,0.08)">
-        <summary style="font-weight:600;cursor:pointer;color:var(--agave-deep)">Gdzie dokładnie się znajdujecie?</summary>
-        <p style="margin-top:.8rem;font-size:.92rem;color:var(--earth-50);line-height:1.7">Bar Agawa znajduje się przy ul. Gustawa Morcinka 1, 41-303 Dąbrowa Górnicza. Łatwy dojazd, parking w okolicy.</p>
+      <details class="faq-item faq-item-last">
+        <summary class="faq-summary">Gdzie dokładnie się znajdujecie?</summary>
+        <p class="faq-answer">Bar Agawa znajduje się przy ul. Gustawa Morcinka 1, 41-303 Dąbrowa Górnicza. Łatwy dojazd, parking w okolicy.</p>
       </details>
     </div>
   </div>
