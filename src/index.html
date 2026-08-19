@@ -1293,6 +1293,26 @@ section{padding:2rem 0;page-break-inside:avoid}#hero{min-height:auto;padding:2re
   });
 
   // ═══════ SMOOTH SCROLL NAV ═══════
+  // Hamburger menu
+  var burger=document.querySelector('.nav-burger');
+  var mobileMenu=document.getElementById('mobile-menu');
+  if(burger&&mobileMenu){
+    burger.addEventListener('click',function(){
+      var isOpen=burger.getAttribute('aria-expanded')==='true';
+      burger.setAttribute('aria-expanded',String(!isOpen));
+      if(!isOpen){mobileMenu.classList.add('open');mobileMenu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+      else{mobileMenu.classList.remove('open');mobileMenu.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        burger.setAttribute('aria-expanded','false');
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      });
+    });
+  }
+
   document.querySelectorAll('nav a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
       e.preventDefault();
