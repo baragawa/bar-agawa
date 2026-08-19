@@ -1414,7 +1414,8 @@ section{padding:2rem 0;page-break-inside:avoid}#hero{min-height:auto;padding:2re
   var toggle=document.querySelector('.theme-toggle');
   var html=document.documentElement;
   var stored=localStorage.getItem('agawa-theme');
-  if(stored==='dark'){html.setAttribute('data-theme','dark')}
+  if(stored){html.setAttribute('data-theme',stored)}
+  else if(window.matchMedia('(prefers-color-scheme:dark)').matches){html.setAttribute('data-theme','dark')}
   if(toggle){
     toggle.addEventListener('click',function(){
       var current=html.getAttribute('data-theme');
