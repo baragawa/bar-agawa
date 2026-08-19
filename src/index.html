@@ -2,6 +2,9 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
+<script>
+(function(){var t=localStorage.getItem('agawa-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.setAttribute('data-theme','dark')})();
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bar Agawa Dąbrowa Górnicza | Pub z Ogródkiem | Imprezy Okolicznościowe</title>
 <meta name="description" content="Bar Agawa. Bar sąsiedzki z ogródkiem pod drzewami w Dąbrowie Górniczej, ul. Morcinka 1. Piwo lane 12 zł, kawa 7 zł, drinki. Sala na imprezy okolicznościowe 10-30 osób: urodziny, 18-stki, wieczory kawalerskie. Pon-sob od 11:00, niedz od 13:00.">
@@ -1419,9 +1422,6 @@ section{padding:2rem 0;page-break-inside:avoid}#hero{min-height:auto;padding:2re
   // Dark mode toggle
   var toggle=document.querySelector('.theme-toggle');
   var html=document.documentElement;
-  var stored=localStorage.getItem('agawa-theme');
-  if(stored){html.setAttribute('data-theme',stored)}
-  else if(window.matchMedia('(prefers-color-scheme:dark)').matches){html.setAttribute('data-theme','dark')}
   if(toggle){
     toggle.addEventListener('click',function(){
       var current=html.getAttribute('data-theme');
